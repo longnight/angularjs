@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>quick tutorials</title>
-    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.0.2/angular.js"></script>
 
     <script type="text/javascript">
 
@@ -12,23 +12,31 @@
 </head>
 
 
-<body>
+<body ng-app>
 
 
 
 
     <div ng-controller="HelloCtrl">
 
-    say hello to: <input type="text" ng-model="name" />
+    say hello to: <input type="text" ng-model="name"><br>
 
     <h2>Hello, {{name}}!</h2>
 
     </div>
 
     <script type="text/javascript">
+
         var HelloCtrl = function($scope){
             $scope.name = "World";
+
+            // $scope.getName = function() {
+            //     return $scope.name;
+            // }
         }
+
+
+
         console.log('good');
     </script>
 
