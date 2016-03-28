@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>quick tutorials</title>
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.1/angular.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    body {
+        background-color: ghostwhite;
+    }
+    </style>
+
+</head>
+<body ng-app>
+<hr>
+
+<div class="container" ng-controller="TextAreaWithLimitCtrl">
+    <span ng-class="{'text-warning': shouldWarn()}">Remaining: {{ remaining()}}</span>
+    <div class="row">
+        <textarea ng-model="message">{{ message }}</textarea>
+    </div>
+
+    <div class="row">
+        <button ng-click="send()" ng-disable="!hasValidLenght()">Send</button>
+        <button ng-click="click()">Clear</button>
+    </div>
+</div>
+
+    <script type="text/javascript">
+
+    var TextAreaWithLimitCtrl = function($scope){
+
+        var MAX_LEN = 240;
+        var WARN_THRESHOLD = 230;
+
+        $scope.remaining = function(){
+            if ($scope.message == undefined){
+                return MAX_LEN;
+            } else {
+                return MAX_LEN - $scope.message.length;
+            }
+        };
+
+        $scope.shouldWarn = function(){
+            return $scope.remaining() < WARN_THRESHOLD;
+        };
+
+        $scope.hasValidLenght = function(){
+            return False;
+        };
+    }
+
+
+    </script>
+</body>
+</html>
