@@ -2,37 +2,63 @@
 <html>
 <head>
     <title>quick tutorials</title>
-    <script src="http://cdn.bootcss.com/angular.js/1.0.2/angular.js"></script>
+
+    <script src="http://cdn.bootcss.com/angular.js/1.2.1/angular.js"></script>
 
     <script type="text/javascript">
-
     </script>
 
+    <style type="text/css">
+    body {
+        background-color: ghostwhite;
+    }
+    </style>
 
 </head>
 
 
-<body ng-app>
 
+<body ng-app ng-init="thing = {name: 'World'}">
 
-
+<h1>Hey, {{thing.name}}</h1>
 
     <div ng-controller="HelloCtrl">
-
-    say hello to: <input type="text" ng-model="name"><br>
-
-    <h2>Hello, {{name}}!</h2>
-
+        say hello to: <input type="text" ng-model="thing.name"><br>
+        <h2>York, {{ thing.name }}!</h2>
     </div>
 
+    <ul ng-controller="WorldCtrl">
+        <li ng-repeat="country in countries">
+            {{ country.name }} has population of {{ country.population}},
+            {{ worldsPercentage(country.population) }}% of the world's whole.
+        </li>
+        <hr>
+        World's population: {{population}} millions
 
+    </ul>
 
 
 
     <script type="text/javascript">
         var HelloCtrl = function($scope){
-            $scope.name = "World";
-        }
+            // $scope.name = "default value";
+            // $scope.getName = function(){
+            //     return $scope.name;
+            // }
+        };
+
+        var WorldCtrl = function($scope){
+            $scope.population = 7000;
+            $scope.countries = [
+                {name: 'France', population: 63.1},
+                {name: 'United Kingdom', population: 61.8},
+            ];
+            $scope.worldsPercentage = function(countryPopulation){
+                return (countryPopulation/$scope.population)*100;
+            }
+        };
+
+
         console.log('good');
     </script>
 
