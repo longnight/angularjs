@@ -6,6 +6,7 @@
     <script type="text/javascript">
     </script>
     <style type="text/css"> body {background-color: ghostwhite;}
+    input.ng-invalid {background-color: lightblue;}
     </style>
 </head>
 <body>
@@ -13,38 +14,10 @@
 
 
 
-
-
-
-<div ng-app="" ng-init="names=[
-{name:'Jani',country:'Norway'},
-{name:'Hege',country:'Sweden'},
-{name:'Kai',country:'Denmark'}]">
-
-<p>循环对象：</p>
-<ul>
-    <div ng-repeat="x in names">
-
-      <li>
-        {{ x.name + ', ' + x.country }}
-      </li>
-      <hr>
-      <span>this is something!!</span>
-
-    </div>
-</ul>
-
-</div>
-
-
-
-
-
-
-
-
-
-
+<form ng-app="" name="myForm">
+    输入你的名字:
+    <input name="myAddress" ng-model="text" required>
+</form>
 
 
 
