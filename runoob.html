@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>quick tutorials</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css"> body {background-color: ghostwhite;}
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+
+<p>循环对象：</p>
+<ul>
+    <div ng-repeat="x in names">
+
+      <li>
+        {{ x.name + ', ' + x.country }}
+      </li>
+      <hr>
+      <span>this is something!!</span>
+
+    </div>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+
