@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>quick tutorials</title>
     <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
     <script type="text/javascript">
     </script>
+
     <style type="text/css"> body {background-color: ghostwhite;}
-    input.ng-invalid {background-color: lightblue;}
+
     </style>
 </head>
 <body>
 
 
 
+<div ng-app="myApp" ng-controller="customersCtrl">
 
-<form ng-app="" name="myForm">
-    输入你的名字:
-    <input name="myAddress" ng-model="text" required>
-</form>
-
-
-
-
-
-
-
-
+<table>
+  <tr ng-repeat="x in projects|orderBy:'uid'">
+    <td>{{ $index+1 }}</td>
+    <td>{{ x.uid }}</td>
+    <td>{{ x.project_name|uppercase }}</td>
+  </tr>
+</table>
+</div>
 
 
 
 <script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://localhost:9090/api/projects.json")
+    .success(function (response) {$scope.projects = response.projects;});
 
+});
 </script>
 </body>
 </html>
