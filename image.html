@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>one week angularjs</title>
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
     <script type="text/javascript">
     </script>
 
-    <style type="text/css"> body {background-color: ghostwhite;}
+    <style type="text/css"> body {background-color: lightblue;}
 
     </style>
 </head>
 <body>
+
 <div ng-app="myApp"  class="wrapper">
-    <img ng-src="http://placehold.it/600x400?text=ori" resize_img >
+    <img ng-src="http://placehold.it/150x100?text=ori">
     <hr>
     <hr>
-    <img data-ng-src="http://placehold.it/600x400?text=resize_me" resize_img >
+    <img ng-src="http://placehold.it/150x100?text=resize_me" resize_img >
 </div>
 
 <script type="text/javascript">
 
 var app = angular.module('myApp', []);
+app.directive('resizeImg', function(){
 
-app.directive('resize_img', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, elem, attrs) {
-             console.log(elem.parent().width()); // =575
-             console.log(elem[0].offsetHeight);
-        }
+    console.log('resize work');
+    return function(scope, element, attrs){
+        element.on('load', function(){
+            ori_height = $(this).height();
+            this.mod_height = ori_height*3;
+
+            console.log(ori_height, this.mod_height);
+        }).css('height', this.mod_height);
     }
-});
 
+})
 
 
 </script>
