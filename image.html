@@ -25,17 +25,13 @@
 
 var app = angular.module('myApp', []);
 app.directive('resizeImg', function(){
-
-    console.log('resize work');
-    return function(scope, element, attrs){
-        element.on('load', function(){
-            ori_height = $(this).height();
-            this.mod_height = ori_height*3;
-
-            console.log(ori_height, this.mod_height);
-        }).css('height', this.mod_height);
-    }
-
+    return {
+            link: function(scope, element, attrs) {
+                element.bind("load" , function(e){
+                    this.style.height = this.height*3 + 'px';
+                });
+            }
+        }
 })
 
 
