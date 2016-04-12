@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.bxslider.min.css" rel="stylesheet">
+
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
+
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.sliderwrapper').bxSlider({
+          infiniteLoop: true,
+          mode: 'fade',
+          auto: true,
+          pause: 5000,
+          speed: 500,
+          autoHover: true,
+          randomStart: true,
+          infiniteLoop: true,
+          captions: true,
+          adaptiveHeight: true,
+          responsive: true,
+          preloadImages: 'all',
+        });
+    });
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: ghostwhite;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="sliderwrapper">
+        <div class="slider"><a href="#"><img src="http://placehold.it/1920x760?text=sampletext1" title=""></a></div>
+        <div class="slider"><a href="#"><img src="http://placehold.it/1920x760?text=sampletext2" title=""></a></div>
+        <div class="slider"><a href="#"><img src="http://placehold.it/1920x760?text=sampletext3" title=""></a></div>
+        <div class="slider"><a href="#"><img src="http://placehold.it/1920x760?text=sampletext4" title=""></a></div>
+    </div>
+
+
+
+</body>
+</html>

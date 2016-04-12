@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>one week angularjs</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css"> body {background-color: ghostwhite;}
+
+    </style>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+<br><br><br><br><br><br><br>
+
+    <a ng-click="label_filter('design_manufacture')" href="#"> &nbsp;link</a>
+    <a ng-click="label_filter('link2')" href="#">&nbsp;link</a>
+    <a ng-click="label_filter('link3')" href="#">&nbsp;link</a>
+    <a ng-click="label_filter('link4')" href="#">&nbsp;link</a>
+
+
+</div>
+
+<script type="text/javascript">
+
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope) {
+    $scope.label = 'default value';
+    $scope.label_filter = function(any){
+        console.log(any);
+    };
+});
+
+
+
+</script>
+</body>
+</html>

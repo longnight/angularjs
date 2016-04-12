@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>one week angularjs</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css"> body {background-color: ghostwhite;}
+
+    </style>
+</head>
+<body>
+<div ng-app="myApp"  class="wrapper">
+    <img ng-src="http://placehold.it/600x400?text=ori" resize_img >
+    <hr>
+    <hr>
+    <img data-ng-src="http://placehold.it/600x400?text=resize_me" resize_img >
+</div>
+
+<script type="text/javascript">
+
+var app = angular.module('myApp', []);
+
+app.directive('resize_img', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, elem, attrs) {
+             console.log(elem.parent().width()); // =575
+             console.log(elem[0].offsetHeight);
+        }
+    }
+});
+
+
+
+</script>
+
+</body>
+</html>

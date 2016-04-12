@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>quick tutorials</title>
+    <title>one week angularjs</title>
     <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
     <script type="text/javascript">
     </script>
@@ -17,22 +17,78 @@
 
 <div ng-app="myApp" ng-controller="customersCtrl">
 
-<table>
-  <tr ng-repeat="x in projects|orderBy:'uid'">
-    <td>{{ $index+1 }}</td>
-    <td>{{ x.uid }}</td>
-    <td>{{ x.project_name|uppercase }}</td>
-  </tr>
-</table>
+<select class="form-control" id="category_filter" ng-model="seletedCategory" ng-options="category as category.description for category in categories track by category.name" ng-change="category_filter_change()">
+<option value="">筛选：所有分类</option>
+<option value="{{category.name}}">{{category.description}}</option>
+</select>
+
+<br><br><br><br>
+
+<button ng-click="clickme()" >this is button</button>
+
+
+&nbsp;&nbsp; <a ng-model="label" ng-click="label_filter()" href="#"> &nbsp;link</a>
+
+&nbsp;&nbsp; <a ng-click="label_filter()" href="#">&nbsp;link</a>
+
+&nbsp;&nbsp;<a ng-click="label_filter()" href="#">&nbsp;link</a>
+
+&nbsp;&nbsp;<a ng-click="label_filter()" href="#">&nbsp;link</a>
+<hr>
+<p ng-model="label">{{ label }}</p>
+
 </div>
+<br><br><br><br>
+
+
+
 
 
 
 <script type="text/javascript">
+
+
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-    $http.get("http://localhost:9090/api/projects.json")
-    .success(function (response) {$scope.projects = response.projects;});
+
+    $scope.label = 'default value';
+    $scope.label_filter = function(any){
+        console.log('adfasfa');
+        alert('@Rdasfa');
+    };
+
+    var updatePageContent = function(uri){
+        $http.get(uri)
+           .then(
+               function(response){
+                 // console.log(response.data);
+                 $scope.categories = response.categories;
+               },
+               function(response){
+                 console.log('bad');
+               }
+            )
+    };
+    updatePageContent('http://127.0.0.1:9090/api/categories.json');
+    // console.log($scope.categories[3]);
+
+    cat_res = $http.get("http://127.0.0.1:9090/api/categories.json")
+    cat_res.success(function(response){
+        categories = response.categories;
+        $scope.categories = categories;
+        $scope.seletedCategory = $scope.categories[2];
+    });
+
+    $scope.category_filter_change = function(){
+        console.log($scope.seletedCategory);
+    }
+
+    $scope.clickme = function(){
+        tmp = $scope.categories;
+    }
+
+    console.log($scope.label);
+
 
 });
 </script>
