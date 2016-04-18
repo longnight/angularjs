@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="box"><input class="copy" type="text" />&nbsp;&nbsp;&nbsp;<span class="text">1</span></div><br>
+<div class="box"><input class="copy" type="text" />&nbsp;&nbsp;&nbsp;<span class="text">2</span></div><br>
+<div class="box"><input class="copy" type="text" />&nbsp;&nbsp;&nbsp;<span class="text">3</span></div><br>
+<div class="box"><input class="copy" type="text" />&nbsp;&nbsp;&nbsp;<span class="text">4</span></div><br>
+<div class="box"><input class="copy" type="text" />&nbsp;&nbsp;&nbsp;<span class="text">5</span></div><br>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.box input').change(function(){
+      // console.log('~');
+      the_v = $(this).val();
+      $(this).next('.text').html(the_v);
+
+      // $('.text').html(the_v);
+
+    });
+  })
+</script>
+
+</body>
+</html>

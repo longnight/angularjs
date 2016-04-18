@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>chart js</title>
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="http://cdn.bootcss.com/es6-promise/3.2.1/es6-promise.min.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css"> body {background-color: ghostwhite;}
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    good boy~
+    <hr>
+    <canvas id="myChart" width="600" height="250"></canvas>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+var uri = "http://127.0.0.1:9090/api/projects/09745810/scores/";
+
+function fetchRadar(url){
+    var l = null, s = null;
+    $.ajax({
+        url: url,
+        async: false
+    })
+    .done(function(res){
+        l = res.labels;
+        s = res.scores;
+    })
+    return [l, s]
+};
+
+rv = fetchRadar(uri)
+
+// console.log(fetchRadar(uri));
+
+function updateRadar(element, labels, scores){
+    var data = {
+        labels: labels,
+        datasets: [
+            {
+                label: "TestLabel",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: scores
+            }
+        ]
+    };
+    var ctx = element.get(0).getContext("2d");
+    var myRadarChart = new Chart(ctx).Radar(data);
+};
+
+
+updateRadar($("#myChart"), rv[0], rv[1]);
+
+
+</script>
+</body>
+</html>

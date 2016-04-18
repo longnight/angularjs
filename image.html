@@ -28,7 +28,7 @@ app.directive('resizeImg', function(){
     return {
             link: function(scope, element, attrs) {
                 element.bind("load" , function(e){
-                    this.style.height = this.height*3 + 'px';
+                    this.style.height = this.width*2.1 + 'px';
                 });
             }
         }
