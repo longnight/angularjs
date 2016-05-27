@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Jcrop</title>
+
+  <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/jquery-jcrop/0.9.12/css/jquery.Jcrop.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery-jcrop/0.9.12/js/jquery.Jcrop.min.js"></script>
+  <script src="js/myjcrop.js"></script>
+  <style type="text/css">
+#preview {
+  background: red;
+  border: 1px solid green;
+}
+  </style>
+
+</head>
+<body>
+
+<h3>HHaa</h3>
+
+
+<form id="form">
+  <h1>Client side image file selector and cropper</h1>
+  <h2>Image file select</h2>
+  <input id="file" type="file" />
+  <h2>Image cropper (Jcrop)</h2>
+  <div id="jcrop"></div>
+  <h2>Real size cropped image preview (canvas)</h2>
+  <canvas id="canvas"></canvas>
+  <input id="png" type="hidden" />
+  <h2>Submit form</h2>
+  <input type="submit" value="Upload form data and image" />
+</form>
+
+
+
+</body>
+</html>

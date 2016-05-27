@@ -18,7 +18,7 @@
 <div class="container">
     good boy~
     <hr>
-    <canvas id="myChart" width="600" height="250"></canvas>
+    <canvas id="myChart" width="400px" height="400px"></canvas>
 
 
 </div>
@@ -51,7 +51,7 @@ function updateRadar(element, labels, scores){
         datasets: [
             {
                 label: "TestLabel",
-                fillColor: "rgba(151,187,205,0.2)",
+                fillColor: "rgba(13, 99, 227, 0.5)",
                 strokeColor: "rgba(151,187,205,1)",
                 pointColor: "rgba(151,187,205,1)",
                 pointStrokeColor: "#fff",
@@ -62,7 +62,44 @@ function updateRadar(element, labels, scores){
         ]
     };
     var ctx = element.get(0).getContext("2d");
-    var myRadarChart = new Chart(ctx).Radar(data);
+    var myRadarChart = new Chart(ctx).Radar(data,{
+        animationEasing: "easeInOutCirc",
+        scaleOverride: true,
+        scaleSteps: 5,
+        scaleStepWidth: 1,
+        scaleStartValue: 0,
+        scaleLineColor: "rgba(38, 126, 42, .1)",
+        scaleLineWidth: 1,
+        scaleShowLabels: false,
+        scaleLabel: "<%=value%>",
+        scaleIntegersOnly: false,
+        scaleFontSize: 14,
+        scaleFontStyle: "bold",
+        scaleFontColor: "#9e0563",
+        responsive: false,
+        tooltipFillColor: "rgba(183, 165, 6, 0.6)",
+        tooltipFontColor: 'blue',
+        tooltipFontSize: 18,
+        tooltipTitleFontSize: 20,
+        tooltipCornerRadius:9,
+        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+        // specific for radar chart:
+        scaleShowLine: true,
+        angleShowLineOut: true,
+        angleLineColor : "rgba(6, 183, 180, 0.2)",
+        angleLineWidth: 1,
+        pointLabelFontSize: 22,
+        pointLabelFontColor : "red",
+        pointDot: true,
+        pointDotRadius: 3,
+        pointDotStrokeWidth:1,
+        pointHitDetectionRadius: 20,
+        datasetStroke: false,
+        datasetStrokeWidth: 1,
+        datasetFill: false
+
+
+    });
 };
 
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>logo wall</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/EventEmitter/4.2.6/EventEmitter.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.js"></script>
+    <script src="js/jquery.montage.min.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    body {
+      background-color: lightblue;
+    }
+
+    #logo-wall-wrapper {
+      text-align: center;
+    }
+
+    #logo-wall {
+        background-color: #fff;
+        width: 100%;
+        padding:10px 10px;
+
+      }
+
+    .logo-grid {
+      display: inline-block;
+      width: 120px;
+      height: 50px;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+
+    </style>
+
+</head>
+<body>
+
+
+<h2>Cool~</h2>
+<div class="container-fluid">
+<div class="row">
+<div id="logo-wall-wrapper">
+
+
+  <div id="logo-wall">
+    <div class="logo-grid"><a href="https://svrobo.org"><img src="img/logo/global_400190722.png"></a></div>
+    <div class="logo-grid"><a href="http://www.svief.org/"><img src="img/logo/svief.png"></a></div>
+    <div class="logo-grid"><a href="#"><img src="img/logo/Runway-orange-2015.png"></a></div>
+    <div class="logo-grid"><a href="http://sv.thegmic.com"><img src="img/logo/GMIC-logo.png"></a></div>
+    <div class="logo-grid"><a href="http://www.hackerdojo.com"><img src="img/logo/logo_regular_400.png"></a></div>
+    <div class="logo-grid"><a href="http://www.svace.org"><img src="img/logo/svace.png"></a></div>
+    <div class="logo-grid"><a href="http://grishinrobotics.com"><img src="img/logo/GRISHIN-ROBOTICS.png"></a></div>
+    <div class="logo-grid"><a href="http://www.mediatek.com"><img src="img/logo/mediatek.png"></a></div>
+    <div class="logo-grid"><a href="http://svvr.com"><img src="img/logo/SVVRheader.png"></a></div>
+    <div class="logo-grid"><a href="http://hf.cx"><img src="img/logo/hacker_founder.png"></a></div>
+
+    <div id="logo-wall-separator" class="visible-lg visible-md"></div>
+
+    <div class="logo-grid"><a href="http://www.huawei.com"><img src="img/logo/mq1.png"></a></div>
+    <div class="logo-grid"><a href="http://tandemcap.com"><img src="img/logo/tandem_logo_large.png"></a></div>
+    <div class="logo-grid"><a href="http://highway1.io"><img src="img/logo/highway1-logo.png"></a></div>
+    <div class="logo-grid"><a href="https://www.pressfriendly.com"><img src="img/logo/PressFriendly-logo.png"></a></div>
+    <div class="logo-grid"><a href="https://www.tindie.com"><img src="img/logo/tindie-logo.png"></a></div>
+    <div class="logo-grid"><a href="https://www.indiegogo.com"><img src="img/logo/Indiegogo_logo.png"></a></div>
+    <div class="logo-grid"><a href="https://www.pubnub.com"><img src="img/logo/pubnub.png"></a></div>
+    <div class="logo-grid"><a href="http://wearableworld.co"><img src="img/logo/WW-full-10.png"></a></div>
+    <div class="logo-grid"><a href="http://www.leiphone.com"><img src="img/logo/leiphone.png"></a></div>
+    <div class="logo-grid"><a href="http://www.pingwest.com"><img src="img/logo/pw-logo.png"></a></div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+
+
+    $(".logo-grid").children("a").children('img').each(function(){
+      var ori_width = $(this).width();
+      var ori_height = $(this).height();
+      var ratio = Math.min(120/ori_width, 50/ori_height);
+      $(this).width(ori_width*ratio);
+      $(this).height(ori_height*ratio);
+    })
+
+
+
+    })
+  </script>
+
+</body>
+</html>

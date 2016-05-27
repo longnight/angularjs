@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>X</title>
+
+  <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+
+  <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://cdn.bootcss.com/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+
+  <style type="text/css"> body {background-color: lightgray;}
+
+  </style>
+</head>
+<body>
+
+<p>
+<a href="#" id="username" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">any default superuser</a>
+</p>
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $.fn.editable.defaults.mode = 'inline';
+
+  $('#username').editable();
+  //
+
+
+
+
+});
+</script>
+</body>
+</html>

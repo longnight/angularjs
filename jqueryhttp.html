@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>$ ajax http</title>
+
+    <style type="text/css"> body {background-color: ghostwhite;}</style>
+
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/es6-promise/3.2.1/es6-promise.min.js"></script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+    var url = "http://127.0.0.1:9090/api/categories.json";
+
+  // $.ajax({
+  //   url: "http://127.0.0.1:9090/api/categories.json",
+  //   })
+  // .done(function(res){
+  //   categories = res.categories;
+  //   var k = 'Robotics';
+  //   var my_obj = null;
+  //   $.each(categories, function(index, key, value){
+  //       if (categories[index]['name'] == k){
+  //           my_obj = categories[index];
+  //           console.log('success');
+  //       }
+  //   })
+  //   $('#you').html(categories[0]['name']);
+  //   })
+
+  // function Dooo(url){
+  //   return new Promise(function(resolve, reject){
+  //       $.ajax({url: url})
+  //       .done(resole).fail(reject);
+  //   });
+  // };
+
+  // $.ajax(url, {
+  //   success: function(){
+  //       $('#you').html('good');
+  //   }
+  // }, {
+  //   error: function(){
+  //       $('#you').html('bad');
+  //   }
+  // });
+
+  // fetch(url).then(
+  //   function(){
+  //       $('#you').html('good');
+  //   }).catch(function(){
+  //       $('#you').html('bad');
+  //   })
+
+  fetch(url)
+  .then(function(){
+    $('#you').html('good1');
+    return fetch(url);
+  })
+  .then(function(){
+    $('#you').html('good2');
+  })
+  .catch(function(){
+    $('#you').html('bad');
+  })
+
+    });
+    </script>
+
+</head>
+<body>
+
+<span>
+purple rain
+</span>
+<hr>
+
+<div id="you"></div>
+
+
+</body>
+</html>

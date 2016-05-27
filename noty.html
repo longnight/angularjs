@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Noty</title>
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/packaged/jquery.noty.packaged.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/themes/default.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/layouts/top.min.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
+
+    <style type="text/css"> body {background-color: lightblue;}
+
+    </style>
+</head>
+<body>
+
+<h3>I am noty</h3>
+
+<button id="mine">cool</button>
+
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $('#mine').click(function(e){
+        var n = noty({
+            text: 'noty - a jquery notification library!',
+            animation: {
+        open: {height: 'toggle'}, // jQuery animate function property object
+        close: {height: 'toggle'}, // jQuery animate function property object
+        easing: 'swing', // easing
+        speed: 30 // opening & closing animation speed
+        }
+
+
+        });
+    })
+
+})
+
+</script>
+
+</body>
+</html>
