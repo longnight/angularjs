@@ -6,10 +6,6 @@
     <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/packaged/jquery.noty.packaged.min.js"></script>
     <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/themes/default.min.js"></script>
-    <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/themes/bootstrap.min.js"></script>
-    <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/themes/relax.js"></script>
-    <script src="http://cdn.bootcss.com/jquery-noty/2.3.8/layouts/top.min.js"></script>
-
     <script type="text/javascript">
 
     </script>
@@ -40,13 +36,16 @@ $(document).ready(function() {
         easing: 'swing', // easing
         speed: 300 // opening & closing animation speed
         },
+        modal: true,
         layout: 'topCenter',
         // theme: 'default', // or 'relax'
         maxVisible: 200,
-        closeWith: ['click'],
-        timeout: 5000
-
-
+        closeWith: ['click', 'button', 'backdrop'],
+        timeout: 5000,
+        callback: {
+            // onCloseClick: alert('well, cool')
+            onCloseClick: location.href = 'http://liyuwiki.com'
+        }
         });
     })
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="share js的实现原理分析" />
+  <title>Social share</title>
+  <link href="http://cdn.bootcss.com/social-share.js/1.0.14/css/share.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/social-share.js/1.0.14/js/jquery.share.min.js"></script>
+
+  <style type="text/css"> body {background-color: lightgray;}
+
+  </style>
+</head>
+<body>
+
+
+<h3>share me </h3>
+<hr>
+<br><br><br><br><br><br><br>
+<div class="share-component" data-sites="wechat, weibo, qq, facebook, twitter"></div>
+<br><br><br><br><br><br><br>
+<div class="share-component" data-disabled="google,twitter,facebook" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+<hr><hr><hr>
+<div class="social-share" data-sites="" data-initialized="true">
+  <a href="#" class="social-share-icon icon-weibo"></a>
+  <a href="#" class="social-share-icon icon-wechat"></a>
+  <a href="#" class="social-share-icon icon-qq"></a>
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  //
+  // $('#xxx').socialShare({})
+
+});
+</script>
+</body>
+</html>

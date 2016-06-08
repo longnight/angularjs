@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>quick tutorials ng link</title>
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.1/angular.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    body {
+        background-color: ghostwhite;
+    }
+    </style>
+
+</head>
+
+<body ng-app>
+<hr>
+
+<div class="container" ng-controller="LinkCtrl">
+    <div class="linkblock">
+
+        <a class="link" id="link1" href="#" ng-click="printlink($event)" data="AAAdata">AAA</a>&nbsp;
+
+        <a class="link" id="link2" href="#" ng-click="printlink($event)" data="BBBdata">BBB</a>&nbsp;
+
+        <a class="link" id="link3" href="#" ng-click="printlink($event)" data="CCCdata">CCC</a>
+
+    </div>
+</div>
+
+    <script type="text/javascript">
+
+function removeElementsByClass(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+
+    var LinkCtrl = function($scope){
+
+        var asc_order = '<span class="order_filter asc_order">↓</span>';
+        var desc_order = '<span class="order_filter desc_order">↑</span>';
+
+        $scope.printlink = function($event){
+            console.log($event.target.innerHTML);
+            removeElementsByClass('order_filter');
+
+            $event.currentTarget.innerHTML += asc_order;
+            // $scope.target.innerHTML += 'adfuaouoi';
+            // console.log($event.target);
+            // console.log($event.target.attributes.data.value);
+        }
+
+
+    }
+
+
+    </script>
+</body>
+</html>
