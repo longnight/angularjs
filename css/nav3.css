@@ -1,0 +1,56 @@
+
+body {
+  background-color: ghostwhite;
+}
+
+@media screen and (min-width:768px){
+  .navbar-brand-centered {
+      position: absolute;
+      left: 10%;
+      display: block;
+      width: 160px;
+      text-align: center;
+      background-color: #eee;
+  }
+
+  .navbar>.container .navbar-brand-centered,
+  .navbar>.container-fluid .navbar-brand-centered {
+      margin-left: -80px;
+      background-image: url("http://placehold.it/160x20");
+  }
+
+  span#logo-text {
+    display: none;
+  }
+
+
+  #main-menu {
+    margin-left: 20%;
+  }
+
+  .navbar-nav>a>img#nav-avatar {
+    float:left;
+    margin-top: 2px;
+    display: inline-block;
+  }
+
+}
+
+
+@media screen and (min-width:768px) and (max-width:1200px) {
+
+  input#search-input {
+    width: 80px;
+    display: inline;
+  }
+
+}
+
+
+@media screen and (max-width:768px) {
+
+ form#search-form {
+    margin-right: 0;
+  }
+
+ }
