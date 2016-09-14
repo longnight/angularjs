@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tab</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/limonte-sweetalert2/4.1.0/sweetalert2.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/limonte-sweetalert2/4.1.0/sweetalert2.min.js"></script>
+</head>
+
+
+<body>
+
+<h3>this is title</h3>
+
+<span id="data1" data-foo="1213456"></span>
+<span id="data2" data-bar="goon lady"></span>
+
+<form id="fund-form" action="#" method="post">
+
+
+    <button class="btn btn-primary" type="submit">提交融资意愿</button>
+
+</form>
+
+<p>Obcaecati ad inventore fuga omnis modi libero a? Odit nostrum ex, quos illum nulla fuga repellat culpa ab rem aliquid, fugit omnis aliquam vero harum nostrum reprehenderit eaque pariatur distinctio, voluptates eveniet corporis praesentium quas maxime obcaecati?</p>
+
+<p>Fugiat est doloremque repellendus qui quis iste magnam labore, corrupti molestiae saepe et reiciendis doloremque, esse inventore nobis adipisci sequi pariatur sed voluptate nihil natus odit. Praesentium laborum provident ipsa corporis culpa soluta delectus, odit sunt possimus aspernatur perferendis voluptatem assumenda, quis minus tempore repellat, cumque quod debitis atque tenetur dolore adipisci doloribus quidem nostrum similique, enim illo iste explicabo nostrum nobis quasi consequuntur magni temporibus illum. Corrupti voluptatem recusandae ratione, voluptatum quibusdam ex nobis dolorem.</p>
+
+<p>Repudiandae recusandae repellat id nisi porro tenetur similique, repudiandae rem odio veritatis ad esse, adipisci hic odit nihil quam, laborum reiciendis nobis officiis quo quia nam minus accusantium itaque distinctio assumenda, illo ipsum rem at aspernatur sunt velit amet in?</p>
+
+<p>Expedita quam quo beatae suscipit sed nihil quos, ipsum qui ad incidunt nesciunt ab doloribus adipisci. Voluptatum sit ex minima vel sint quos quidem tempora incidunt atque?</p>
+
+<p>Ipsam nemo vel doloremque earum, cum magni suscipit obcaecati consectetur dolorum maiores assumenda voluptas impedit perferendis ullam, neque sint quisquam quos minus ex. Iste magni exercitationem sequi repellendus ducimus, id et quibusdam mollitia tenetur?</p>
+
+<p>Numquam praesentium laboriosam natus libero hic beatae perspiciatis a cupiditate, tempora impedit cupiditate eum obcaecati quasi nostrum ipsa rerum fugiat culpa, deserunt nisi magni molestiae labore, adipisci corrupti sapiente possimus iusto atque ipsa doloribus pariatur, id repellendus assumenda sint dicta officia voluptates laboriosam? Cupiditate itaque pariatur quod quis eum odit blanditiis?</p>
+
+<p>Ratione aliquam consequuntur animi itaque architecto voluptatem laborum iure odit, quis quos vitae minima fugiat commodi possimus esse, inventore eius ipsa quos veritatis provident quidem aliquid, totam at a dolor repudiandae id provident necessitatibus vel fugiat magnam, nulla repudiandae debitis fuga odio et doloremque porro iure explicabo suscipit?</p>
+
+<p>Eius officiis culpa placeat? Pariatur aspernatur sunt quod doloremque, architecto molestiae veniam voluptatibus temporibus. Reprehenderit dolor quibusdam asperiores delectus tenetur illo ducimus.</p>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#fund-form').submit(function(e) {
+        e.preventDefault();
+        // get field value ...
+
+        swal({
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it',
+        }).then(function(){
+            swal(
+                '~~',
+                '你的融资已提交，我们将会尽快与你联系.',
+                'success'
+            );
+        }, function(dismiss){
+            swal("you miss them, yeah!");
+        }
+        )
+
+    })
+
+
+
+});
+
+
+
+</script>
+</body>
+</html>
