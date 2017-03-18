@@ -11,7 +11,8 @@ def myfunc():
     local('pwd')
 
 
-def git_status():
+def git():
     local("git status")
     local("git add .")
     local("git commit -m 'fab script' ")
+    local("git push")
