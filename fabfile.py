@@ -9,3 +9,9 @@ def hello(name="world"):
 
 def myfunc():
     local('pwd')
+
+
+def git_status():
+    local("git status")
+    local("git add .")
+    local("git commit -m 'fab script' ")

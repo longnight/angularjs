@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My event</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+  body {
+    background-color: lightgray;
+    max-width: 1200px;
+    margin: auto auto;
+    padding: 20px 20px 100px 20px;
+    border: 2px solid pink;
+  }
+</style>
+
+<script type="text/javascript">
+  function yourfunc(e){
+    alert("XXXX");
+  }
+</script>
+
+</head>
+
+<body>
+
+
+<h3>test page</h3>
+
+<div>
+  HHFHLKJ <input type="text" size="30" id="email" onchange="myfunc">
+</div>
+<div>
+  <a href="#" onmouseover="console.log('An onMouseOver event');return false">asdasew</a>
+</div>
+
+<div>
+  <button id="testid">点击这个按钮</button>
+</div>
+
+<div id="foo"> I am a fool. </div>
+
+
+<div id="inline" onclick="yourfunc()">here is a inline event.</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+var btn = document.getElementById('testid');
+
+
+// ========== test event 1 ==========
+function myfunc(e){
+  console.log("myfunc working");
+  console.log(e.type, e.target);
+  console.log(e);
+}
+// btn.addEventListener('click', myfunc, false);
+$('#testid').bind('click', myfunc);
+// $("#foo").bind('click', function(){
+//   console.log('yes , you are.');
+// })
+$('#foo').on('click', myfunc);
+// ========== test event 1 end ==========
+
+
+
+
+// --------------- closure ---------------
+function bibao() {
+  var i = 0;
+  return function b() {
+      console.info(++i);
+    };
+  };
+
+  var c = bibao();
+  for (var i = 0; i < 10; i++) {
+    c();
+    }
+// --------------- closure end ------------
+
+
+
+var fms02now = {
+    "_id" : ObjectId("582024e099dcb13c7cf8fb77"),
+    "uploadTime" : NumberLong("1478501600094"),
+    "uploadTimeString" : "2016-11-07 14:53:20",
+    "logId" : NumberLong("147045556255535"),
+    "operator" : "122",
+    "deviceId" : "CYQBABIFAACAA",
+    "brand" : "ECANUS PLUS",
+    "model" : "ECANUS PLUS",
+    "macAddr" : "",
+    "imei" : "341605155011681",
+    "imsi" : "",
+    "serialNumber" : "4e3f9ad52842dfe47f80711b7fb2960d",
+    "action" : "install",
+    "time" : NumberLong("1470455619000"),
+    "timeString" : "2016-08-06 11:53:39",
+    "resourceId" : "d4652f5cc0213a47acf51266702ee297",
+    "fileName" : "",
+    "packageName" : "com.store.cplaycduexclusive",
+    "resultCode" : 0,
+    "resultMessage" : "install d4652f5cc0213a47acf51266702ee297 success"
+};
+
+
+var wangqin = {
+    "_id" : ObjectId("56d6e50be4b09ca33d2a05d7"),
+    "logId" : 3529339282,
+    "operator" : "022038",
+    "deviceId" : "351734076561991",
+    "time" : 1456776344234,
+    "action" : "install",
+    "result" : 0,
+    "resourceId" : "d17b497a151b3cc5c7a99c7775668",
+    "packageName" : "com.ijinshan.kbatterydoctor_en",
+    "versionCode" : 0,
+    "device" : "KM2TKIBACTPLK",
+    "timeString" : "2016-03-01 04:05:44",
+    "resultString" : "成功",
+    "detail" : "包名：com.ijinshan.kbatterydoctor_en;资源ID：d17b497a151b3cc5c7a99c7775668;sha1：4e3333eabda9293bcec06549237ad16a75d8a4e3;资源名:Battery Doctor;USB设备序号:S101X5C090102343;",
+    "uploadTime" : 1456923915851,
+    "uploadTimeString" : "2016-03-02 21:05:15",
+    "model" : "S4X",
+    "serialNumber" : "S101X5C090102343",
+    "externalId" : "CNBD20151218",
+    "assetId" : "KM2TKIBACTPLK",
+    "title" : "Battery Doctor",
+    "incrementSeq" : 11628018,
+    "sign" : "4e3333eabda9293bcec06549237ad16a75d8a4e3"
+}
+
+
+})
+</script>
+</body>
+</html>
